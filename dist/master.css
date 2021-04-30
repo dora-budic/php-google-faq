@@ -76,6 +76,23 @@ main .container .question h2 {
 main .container .question p {
   color: rgba(0, 0, 0, 0.87);
   font-size: 14px;
-  margin-bottom: 15px;
+  padding-top: 20px;
   line-height: 24px;
+}
+main .container .question ol {
+  font-size: 14px;
+  margin-left: 16px;
+}
+main .container .question ol li {
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 24px;
+  padding-top: 12px;
+}
+main .container .question ol li ol {
+  margin-left: 16px;
+}
+main .container .question h3 {
+  margin-top: 50px;
+  color: #3c4043;
+  font-weight: 500;
 }

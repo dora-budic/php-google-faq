@@ -18,6 +18,28 @@
         "You can learn more about safety and security online, including how to protect yourself and your family online, at the Google Safety Center.",
         "Learn more about how we keep your personal information private and safe — and put you in control.",
       ]
+    ],
+    [
+      "question" => "Why is my account associated with a country?",
+      "answer" => [
+        "Your account is associated with a country (or territory) in the Terms of Service so that we can determine two things:",
+        [
+          "The Google affiliate that provides the services, that processes your information, and that is responsible for complying with applicable privacy laws. Generally, Google offers its consumer services through either of two companies:" => [
+            "Google Ireland Limited, if you’re located in the European Economic Area (EU countries plus Iceland, Liechtenstein, and Norway) or Switzerland",
+            "Google LLC, based in the United States, for the rest of the world",
+          ],
+          "The version of the terms that govern our relationship, which can vary depending on local laws"
+        ],
+        "Keep in mind that Google services are essentially the same regardless of the affiliate that provides the services or your country association."
+      ],
+      "answer-subsection" => [
+        "title" => "Determining the country associated with your account",
+        "text" => [
+          "When you create a new account, we associate your account with a country based on where you created your Google Account. For accounts at least a year old, we use the country from which you usually access Google services — typically where you’ve spent the most time in the last year.",
+          "Frequent travel doesn’t generally affect the country associated with your account. If you move to a new country, it can take about a year for your country association to update.",
+          "If the country associated with your account doesn’t correspond to your country of residence, it could be because of a difference between your country of work and residence, because you’ve installed a Virtual Private Network (VPN) to mask your IP address, or because you live close to a territorial border. Contact us if you think your country association is wrong."
+        ]
+      ]
     ]
   ];
  ?>
@@ -68,24 +90,50 @@
             <div class="question">
               <?php
                 foreach ($faq[$i] as $type => $text) {
-                  if ($type == 'question') { ?>
-                  <h2><?= $text ?></h2>
+                  if ($type == "question") { ?>
+                    <h2><?= $text ?></h2>
+            <?php } else if ($type == "answer") {
+                    foreach ($text as $paragraph) {
+                      if (!is_array($paragraph)) { ?>
+                        <p><?= $paragraph ?></p>
+                <?php } else { ?>
+                        <ol>
+                        <?php
+                          foreach ($paragraph as $key => $value) {
+                            if (is_string($key)) { ?>
+                              <li>
+                                <?= $key ?>
+                                <ol type="a">
+                                  <?php
+                                  for ($j=0; $j < count($value); $j++) { ?>
+                                    <li><?= $value[$j] ?></li>
+                            <?php } ?>
+                                </ol>
+                              </li>
+                      <?php } else { ?>
+                              <li><?= $value ?></li>
+                      <?php }
+                          } ?>
+                        </ol>
+                <?php }
+                    }
+                  } else {
+                    foreach ($text as $key => $value) {
+                      if ($key == "title") { ?>
+                        <h3><?= $value ?></h3>
                 <?php } else {
-                  for ($j=0; $j < count($text); $j++) { ?>
-                    <p><?= $text[$j] ?></p>
+                        for ($k=0; $k < count($value); $k++) { ?>
+                          <p><?= $value[$k] ?></p>
                   <?php }
+                      }
+                    }?>
+            <?php }
                 }
-              } ?>
+              ?>
             </div>
-          <?php }
-        ?>
+    <?php } ?>
 
       </div>
-
-        <!-- <div class="question">
-          <h2>How are you implementing the recent Court of Justice of the European Union (CJEU) decision on the right to be forgotten?</h2>
-          <p>The recent ruling by the Court of Justice of the European Union has profound consequences for search engines in Europe. The court found that certain users have the right to ask search engines like Google to remove results for queries that include the person's name. To qualify, the results shown would need to be inadequate, irrelevant, no longer relevant, or excessive.</p>
-        </div> -->
     </main>
 
     <footer>

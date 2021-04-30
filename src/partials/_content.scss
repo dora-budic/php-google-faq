@@ -14,8 +14,27 @@ main {
       p {
         color: $paragraph-clr;
         font-size: 14px;
-        margin-bottom: 15px;
+        padding-top: 20px;
         line-height: 24px;
+      }
+
+      ol {
+        font-size: 14px;
+        margin-left: 16px;
+        li {
+          color: $paragraph-clr;
+          line-height: 24px;
+          padding-top: 12px;
+          ol {
+            margin-left: 16px;
+          }
+        }
+      }
+
+      h3 {
+        margin-top: 50px;
+        color: $title-clr;
+        font-weight: 500;
       }
     }
   }
