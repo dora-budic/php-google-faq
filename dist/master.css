@@ -1,8 +1,8 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
 }
 
 body {
@@ -95,4 +95,31 @@ main .container .question h3 {
   margin-top: 50px;
   color: #3c4043;
   font-weight: 500;
+}
+
+footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+}
+footer ul li {
+  font-size: 11px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: rgba(61, 61, 61, 0.8);
+}
+footer ul li:not(:first-child):before {
+  content: "·";
+  padding: 0 5px;
+}
+footer select {
+  width: 170px;
 }

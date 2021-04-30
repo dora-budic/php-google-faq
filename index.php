@@ -149,7 +149,19 @@
     </main>
 
     <footer>
-
+      <ul>
+        <li><a href="#">Google</a></li>
+        <li><a href="#">About Google</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+      <select name="language">
+        <option value="eng">English</option>
+        <option value="it">Italian</option>
+        <option value="de">German</option>
+        <option value="es">Spanish</option>
+        <option value="hr">Croatian</option>
+      </select>
     </footer>
   </body>
 </html>
