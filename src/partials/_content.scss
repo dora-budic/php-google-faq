@@ -1,0 +1,22 @@
+main {
+  .container {
+    @include container-center;
+    margin-top: 80px;
+
+    .question {
+      margin-bottom: 60px;
+      h2 {
+        color: $title-clr;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: $paragraph-clr;
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 24px;
+      }
+    }
+  }
+}
