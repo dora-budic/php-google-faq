@@ -155,13 +155,16 @@
         <li><a href="#">Privacy</a></li>
         <li><a href="#">Terms</a></li>
       </ul>
-      <select name="language">
-        <option value="eng">English</option>
-        <option value="it">Italian</option>
-        <option value="de">German</option>
-        <option value="es">Spanish</option>
-        <option value="hr">Croatian</option>
-      </select>
+      <div>
+        <img src="./dist/img/lang.png" alt="globe in chat cloud">
+        <select name="language">
+          <option value="eng">English</option>
+          <option value="it">Italian</option>
+          <option value="de">German</option>
+          <option value="es">Spanish</option>
+          <option value="hr">Croatian</option>
+        </select>
+      </div>
     </footer>
   </body>
 </html>

@@ -120,6 +120,11 @@ footer ul li:not(:first-child):before {
   content: "·";
   padding: 0 5px;
 }
-footer select {
+footer div {
+  display: flex;
+  align-items: center;
+}
+footer div select {
   width: 170px;
+  margin-left: 10px;
 }
